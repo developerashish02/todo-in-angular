@@ -1,0 +1,17 @@
+<ul class="list-group w-100 my-4" *ngFor="let item of todo">
+  <li class="list-group-item d-flex justify-content-between w-100">
+    <span>
+      <input
+        type="checkbox"
+        [checked]="item.isCompleted"
+        (change)="chnageTodoStartus(item)"
+      />
+    </span>
+
+    <span [ngClass]="{ completedTodo: item.isCompleted }">
+      {{ item.title | uppercase }}
+    </span>
+    <span> {{ item.date | date }} </span>
+    <span style="cursor: pointer" (click)="deleteTodo(item)"> transh </span>
+  </li>
+</ul>
